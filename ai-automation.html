@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+  <title>AI Automation Initiative – Carson Sweet</title>
+  <link rel="stylesheet" href="assets/css/Styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Carson Sweet</h1>
+    <address>
+      <a href="mailto:carsonsweetwork@gmail.com">carsonsweetwork@gmail.com</a> &bull;
+      <a href="tel:9414457233">(941) 445-7233</a> &bull;
+      Orlando, FL &bull;
+      <a href="https://www.linkedin.com/in/carson-sweetfl">LinkedIn</a>
+    </address>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="ai-automation.html">AI Automation Initiative</a></li>
+        <li><a href="orlando-health.html">Orlando Health Deployment</a></li>
+        <li>
+          <a href="/assets/resume/ResumeCarsonSweet2026.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </li>
+        <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>AI Automation Initiative <small>(Lockheed Martin)</small></h1>
+
+    <img
+      src="assets/img/ai-automation.jpg"
+      alt="Illustration for the AI Automation Initiative"
+      class="project-image project-image--sm">
+
+    <p>
+      Led AI-driven automation initiatives to streamline business operations by identifying repetitive, time-consuming processes and developing prototypes to automate data entry, report generation, and document classification. These solutions significantly reduced processing times and manual workloads while aligning with corporate security and compliance standards, laying the foundation for scalable enterprise-wide adoption.
+    </p>
+
+    <h2>Skills Learned</h2>
+    <ul>
+      <li>Project leadership and stakeholder discovery</li>
+      <li>Process mapping and workflow optimization</li>
+      <li>Automation/Python scripting and AI prototyping</li>
+      <li>Change management and documentation</li>
+      <li>Team collaboration and cross-functional communication</li>
+      <li>Agile and iterative project management</li>
+      <li>Requirements gathering and technical writing</li>
+      <li>Problem-solving and troubleshooting</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Carson Sweet</p>
+  </footer>
+
+  <script>
+  (function(){
+    const key='theme', root=document.documentElement;
+    try{
+      const s=localStorage.getItem(key);
+      if(s==='light'||s==='dark') root.dataset.theme=s;
+    }catch(e){}
+    document.getElementById('theme-toggle')?.addEventListener('click',()=>{
+      const next=root.dataset.theme==='dark'?'light':'dark';
+      root.dataset.theme=next;
+      try{ localStorage.setItem(key,next); }catch(e){}
+    });
+  })();
+  </script>
+</body>
+</html>

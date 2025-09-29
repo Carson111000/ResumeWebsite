@@ -1,0 +1,213 @@
+header {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 1rem .75rem;
+  text-align: center;       /* ✅ centers the heading and address */
+}
+
+header h1 {
+  margin: .25rem 0 .5rem;
+  color: var(--text);
+}
+
+header address {
+  font-style: normal;
+  color: var(--muted);
+  display: block;           /* ensures it breaks to its own line */
+  margin-bottom: .5rem;
+}
+
+nav ul {
+  margin: .5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;  /* ✅ centers the nav links */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+/* ========== THEME TOKENS (LIGHT) ========== */
+:root{
+  --bg:#f9fafb;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --primary:#3b82f6;          /* your crisp blue */
+  --primary-weak:#e6f0ff;
+  --shadow:0 2px 4px rgba(0,0,0,.08);
+}
+
+/* ========== THEME TOKENS (DARK VIA OS) ========== */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1220;
+    --surface:#0f172a;
+    --text:#e5e7eb;
+    --muted:#cbd5e1;
+    --border:#1f2937;
+    --primary:#93c5fd;        /* lighter blue for contrast */
+    --primary-weak:#1e293b;
+    --shadow:0 2px 6px rgba(0,0,0,.35);
+  }
+}
+
+/* ========== THEME TOKENS (MANUAL TOGGLE OVERRIDES) ========== */
+:root[data-theme="light"]{
+  --bg:#f9fafb;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --primary:#3b82f6;
+  --primary-weak:#e6f0ff;
+  --shadow:0 2px 4px rgba(0,0,0,.08);
+}
+:root[data-theme="dark"]{
+  --bg:#0b1220;
+  --surface:#0f172a;
+  --text:#e5e7eb;
+  --muted:#cbd5e1;
+  --border:#1f2937;
+  --primary:#93c5fd;
+  --primary-weak:#1e293b;
+  --shadow:0 2px 6px rgba(0,0,0,.35);
+}
+
+/* ===== Base ===== */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  line-height:1.6;
+  background:var(--bg);
+  color:var(--text);
+}
+
+a{ color:var(--primary); text-decoration:none; }
+a:hover, a:focus{ text-decoration:underline; }
+
+main{ max-width: 1100px; margin:0 auto; padding:1rem; }
+
+/* ===== Typography ===== */
+h1,h2,h3,h4{ margin:.5rem 0; }
+h1{ font-size:2rem; }
+h2{ font-size:1.4rem; color:var(--primary); margin-top:2rem; }
+h3{ font-size:1.1rem; margin-top:1rem; }
+small{ color:var(--muted); }
+
+/* ===== Skip link ===== */
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--primary); color:#fff;
+  padding:.5rem .75rem; border-radius:.375rem; z-index:1000;
+}
+.skip-link:focus{ left:8px; top:8px; outline:none; }
+
+/* ===== Header / Nav ===== */
+header{
+  background:var(--surface);
+  box-shadow: var(--shadow);
+  padding:1rem .75rem;
+}
+header h1{ margin:.25rem 0 .5rem; color:var(--text); }
+header address{ font-style:normal; color:var(--muted); }
+header address a{ color:var(--text); font-weight:500; }
+
+nav ul{ margin:.5rem 0 0; padding:0; list-style:none; display:flex; gap:1rem; flex-wrap:wrap; }
+nav a{ font-weight:600; }
+nav a.current{ text-decoration:underline; }
+
+/* Theme toggle button */
+#theme-toggle{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:.5rem .75rem;
+  border-radius:.5rem;
+  cursor:pointer;
+}
+#theme-toggle:hover{ background:var(--primary-weak); }
+#theme-toggle:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+
+/* ===== Layout columns ===== */
+.columns{}
+.col-left, .col-right{ width:100%; }
+@media (min-width: 768px){
+  .columns{ display:flex; gap:2rem; align-items:flex-start; }
+  .col-left, .col-right{ width:50%; }
+}
+
+/* ===== Images ===== */
+img{ max-width:100%; height:auto; border-radius:6px; }
+.headshot {
+  float:left;
+  width:150px;           /* a bit larger since it's rectangular */
+  height:auto;           /* keep natural aspect ratio */
+  margin:0 1rem 1rem 0;
+  border:3px solid var(--primary);
+  border-radius:8px;     /* subtle rounded corners, not a circle */
+  box-shadow:var(--shadow);
+}
+
+#objective::after{ content:""; display:table; clear:both; }
+
+/* ===== Project list ===== */
+.project-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:1rem; margin-top:1rem;
+}
+.project-thumb{
+  display:block;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:.5rem;
+  text-align:center;
+  padding:1rem;
+  color:var(--text);
+  box-shadow: var(--shadow);
+}
+.project-thumb h3{ margin:.5rem 0 0; color:var(--text); }
+.project-thumb:hover{ background:var(--primary-weak); border-color:var(--primary); }
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:1rem 0;
+  background:var(--surface);
+  color:var(--muted);
+  margin-top:2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Project page hero images */
+.project-image{
+  display:block;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+
+/* Smaller variant specifically for AI Automation */
+.project-image--sm{
+  max-width: 420px;   /* tweak: 360–480px looks good */
+}
+
+/* Home-page project card thumbnail: AI image smaller */
+.project-thumb img.ai-thumb{
+  max-height: 100px;  /* default cards ~140px; this one smaller */
+  object-fit: cover;
+}
+
+.project-image--orlando {
+  max-width: 420px;   /* similar size to AI Automation */
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+

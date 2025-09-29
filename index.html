@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+  <title>Carson Sweet – IT Résumé</title>
+  <link rel="stylesheet" href="assets/css/Styles.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Carson Sweet</h1>
+    <address>
+      <a href="mailto:carsonsweetwork@gmail.com">carsonsweetwork@gmail.com</a> &bull;
+      <a href="tel:9414457233">(941) 445-7233</a> &bull;
+      Orlando, FL &bull;
+      <a href="https://www.linkedin.com/in/carson-sweetfl">LinkedIn</a>
+    </address>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="ai-automation.html">AI Automation Initiative</a></li>
+        <li><a href="orlando-health.html">Orlando Health Deployment</a></li>
+        <li>
+          <a href="/assets/resume/ResumeCarsonSweet2026.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </li>
+        <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="objective">
+      <h2>Objective</h2>
+      <img src="assets/img/headshot.jpg" alt="Photo of Carson Sweet" class="headshot">
+      <p>I’m an IT student specializing in networking and secure infrastructure, with a strong interest
+         in using automation to simplify complex processes. I enjoy finding ways to improve efficiency
+         and reliability through technology, and I’m eager to apply these skills to real-world
+         challenges as I grow in the field.</p>
+    </section>
+
+    <div class="columns">
+      <div class="col-left">
+        <section id="education">
+          <h2>Education</h2>
+          <h3>B.S. Information Technology &ndash; University of Central Florida</h3>
+          <p>Expected Graduation: Dec 2025 &vert; GPA: 3.83</p>
+          <h3>A.A. (Associate in Arts) &ndash; Valencia College</h3>
+          <p>Graduated: 2022 &vert; GPA: 3.73</p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>Effective troubleshooting of software and hardware issues</li>
+            <li>Basic knowledge of Python programming</li>
+            <li>Familiarity with common software applications</li>
+            <li>Adept at using and maintaining tools and equipment</li>
+            <li>Strong organizational and communication skills</li>
+            <li>Eager to learn with a proven strong work ethic</li>
+          </ul>
+        </section>
+
+        <section id="certifications">
+          <h2>Certifications</h2>
+          <ul>
+            <li>TestOut IT Fundamentals Pro (UCF, 2023)</li>
+            <li>Microsoft Office Specialist (NPHS, 2020)</li>
+            <li>Aquatic Facility Operator (NPAC, 2022)</li>
+            <li>Lifeguarding & CPR/AED for the Professional Rescuer (NPAC, 2022)</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="col-right">
+        <section id="experience">
+          <h2>Work Experience</h2>
+          <h3>AI Project Specialist &ndash; Lockheed Martin (Orlando, FL, Feb. 2025 &ndash; Present)</h3>
+          <p>Led the development of AI initiatives to automate business processes and improve operational efficiency.</p>
+
+          <h3>IT Field Technician &ndash; Global KTech (Orlando, FL, Oct. 2024 &ndash; Feb. 2025)</h3>
+          <p>Lead a team of 4–8 technicians deploying and relocating user setups, patching networks, managing hardware installations, and resolving technical issues to ensure seamless operations at Orlando Health.</p>
+
+          <h3>AI Content Tutor &ndash; Outlier (Orlando, FL, Jun. 2024 &ndash; Present)</h3>
+          <p>Train AI models by evaluating and rating conversations across diverse attributes to improve AI performance and accuracy.</p>
+
+          <h3>IT Customer Support Consultant &ndash; Epos Now (Orlando, FL, Mar. 2024 &ndash; Jun. 2024)</h3>
+          <p>Resolved technical issues on software and hardware, assisted users, documented problems, and ensured customer satisfaction.</p>
+
+          <h3>Aquatic Maintenance Specialist &ndash; City of North Port (North Port, FL, Aug. 2020 &ndash; Jun. 2023)</h3>
+          <p>Maintained safety, cleanliness, and functionality of water attractions; handled chemical treatments and equipment upkeep; collaborated with lifeguards and implemented emergency response plans to ensure a safe aquatic environment.</p>
+        </section>
+      </div><!-- /.col-right -->
+    </div><!-- /.columns -->
+  </main><!-- /#main -->
+
+  <footer>
+    <p>&copy; 2025 Carson Sweet</p>
+  </footer>
+
+  <!-- Dark-mode toggle persistence -->
+  <script>
+  (function(){
+    const key = 'theme';
+    const root = document.documentElement;
+
+    // Apply saved theme ASAP
+    try{
+      const saved = localStorage.getItem(key);
+      if(saved === 'light' || saved === 'dark'){ root.dataset.theme = saved; }
+    }catch(e){}
+
+    // Toggle on click
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try{ localStorage.setItem(key, next); }catch(e){}
+    });
+  })();
+  </script>
+</body>
+</html>

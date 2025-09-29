@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+  <title>Orlando Health IT Deployment – Carson Sweet</title>
+  <link rel="stylesheet" href="assets/css/Styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Carson Sweet</h1>
+    <address>
+      <a href="mailto:carsonsweetwork@gmail.com">carsonsweetwork@gmail.com</a> &bull;
+      <a href="tel:9414457233">(941) 445-7233</a> &bull;
+      Orlando, FL &bull;
+      <a href="https://www.linkedin.com/in/carson-sweetfl">LinkedIn</a>
+    </address>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="ai-automation.html">AI Automation Initiative</a></li>
+        <li><a href="orlando-health.html">Orlando Health Deployment</a></li>
+        <li>
+          <a href="assets/resume/ResumeCarsonSweet2026.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </li>
+        <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Orlando Health IT Deployment Project</h1>
+    <img src="assets/img/orlando-health.jpg"
+     alt="Team setting up computers at a medical center"
+     class="project-image project-image--sm">
+
+    <p>
+      At Orlando Health, I led project teams responsible for imaging new PCs, deploying them across multiple medical centers, and troubleshooting complex issues to ensure smooth rollouts. This included coordinating with clinical staff to minimize downtime, managing deployment schedules, and mentoring technicians on best practices for imaging and hardware installation. By organizing teams of 4–8 members, I helped accelerate deployment timelines while maintaining consistent quality and reliability in a mission-critical healthcare environment.
+    </p>
+
+    <h2>Skills Learned</h2>
+    <ul>
+      <li>Team leadership and coordination in high-stakes environments</li>
+      <li>PC imaging, configuration, and large-scale deployment</li>
+      <li>Troubleshooting hardware and network connectivity issues</li>
+      <li>Communicating with medical staff to align IT with clinical needs</li>
+      <li>Time management and scheduling across multiple sites</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Carson Sweet</p>
+  </footer>
+
+  <script>
+  (function(){
+    const key='theme', root=document.documentElement;
+    try{ const s=localStorage.getItem(key); if(s==='light'||s==='dark') root.dataset.theme=s; }catch(e){}
+    document.getElementById('theme-toggle')?.addEventListener('click',()=>{
+      const next=root.dataset.theme==='dark'?'light':'dark'; root.dataset.theme=next;
+      try{ localStorage.setItem(key,next); }catch(e){}
+    });
+  })();
+  </script>
+</body>
+</html>
